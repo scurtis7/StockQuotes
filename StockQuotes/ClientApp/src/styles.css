@@ -25,3 +25,14 @@ h2, h3 {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: lighter;
 }
+
+.navlink {
+  text-decoration: none;
+}
+
+.navlink:hover,
+.navlink:focus,
+.navlink:active,
+.navlink:active:focus {
+  text-decoration: underline;
+}
