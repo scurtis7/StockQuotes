@@ -14,6 +14,8 @@ export class SearchComponent implements OnInit {
   constructor(private stockService: StockService) { }
 
   ngOnInit() {
+    // Used for testing styling
+    // this.stock = {'close': 11.11, 'high': 22.22, 'low': 33.33, 'open': 44.44, 'price': 55.55, 'time': 1234567};
   }
 
   search(searchValue: string) {

@@ -1,0 +1,39 @@
+
+input.search {
+  font-size: 110%;
+}
+
+button {
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+  font-size: 110%;
+}
+
+button.search:hover {
+  background-color: #6E6658;
+  color: white;
+}
+
+button.search {
+  margin-left: 10px;
+  background-color: #254E58;
+  color: white;
+}
+
+.result {
+  margin: 0 0 5px 0;
+  list-style-type: none;
+  padding: 5px;
+  width: 60px;
+}
+
+.result-label {
+  color: #cfd8dc;
+  margin: 0 0 5px 0;
+  list-style-type: none;
+  padding: 5px;
+  width: 60px;
+}
