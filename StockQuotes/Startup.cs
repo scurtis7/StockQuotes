@@ -1,3 +1,4 @@
+using Controllers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -5,6 +6,8 @@ using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
+using Services;
 
 namespace StockQuotes
 {
@@ -20,9 +23,14 @@ namespace StockQuotes
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddHttpClient();
             services.AddControllersWithViews();
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration => { configuration.RootPath = "ClientApp/dist"; });
+
+            services.AddSingleton<StockQuoteController>();
+            services.AddSingleton<ClientService>();
+            // services.AddSingleton<ILogger>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
