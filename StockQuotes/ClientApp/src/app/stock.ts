@@ -1,8 +1,8 @@
 export class Stock {
-  close: number;
-  high: number;
-  low: number;
-  open: number;
-  price: number;
-  time: number;
+  c: number;
+  h: number;
+  l: number;
+  o: number;
+  pc: number;
+  t: number;
 }
