@@ -22,7 +22,7 @@ export class SearchComponent implements OnInit {
     console.log('Stock quote search for: ' + searchValue);
     this.stockService.getStockQuote(searchValue)
       .subscribe(result => {
-        console.log('stock: ' + result);
+        console.log('stock.Close: ' + result.Close);
         this.stock = result;
       });
   }
