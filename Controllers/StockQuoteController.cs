@@ -18,10 +18,9 @@ namespace Controllers
         }
 
         [HttpGet("{symbol}")]
-        public async Task<ActionResult<string>> GetQuote(string symbol)
+        public async Task<Stock> GetQuote(string symbol)
         {
-            var result = await _clientService.GetQuote(symbol);
-            return Ok(result);
+            return await _clientService.GetQuote(symbol);
         }
         
     }

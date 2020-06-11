@@ -21,6 +21,9 @@ export class SearchComponent implements OnInit {
   search(searchValue: string) {
     console.log('Stock quote search for: ' + searchValue);
     this.stockService.getStockQuote(searchValue)
-      .subscribe(result => this.stock = result);
+      .subscribe(result => {
+        console.log('stock: ' + result);
+        this.stock = result;
+      });
   }
 }

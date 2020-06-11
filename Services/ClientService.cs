@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Net;
 using System.Net.Http;
+using System.Net.Http.Formatting;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
@@ -18,7 +20,7 @@ namespace Services
             _clientFactory = clientFactory;
         }
 
-        public async Task<ActionResult<string>> GetQuote(string symbol)
+        public async Task<Stock> GetQuote(string symbol)
         {
             var uri = new Uri($"{FinnHubBaseUrl}/quote?symbol={symbol}&token={FinnHubToken}");
             var client = _clientFactory.CreateClient();
@@ -29,9 +31,15 @@ namespace Services
             };
 
             var result = await client.SendAsync(msg);
-            var retVal = await result.Content.ReadAsStringAsync();
-
-            return retVal;
+            // var retVal = await result.Content.ReadAsStringAsync();
+            if (result.StatusCode == HttpStatusCode.OK)
+            {
+                return await result.Content.ReadAsAsync<Stock>(new[] { new JsonMediaTypeFormatter() });
+            }
+            else
+            {
+                return null;
+            }
         }
 
 
