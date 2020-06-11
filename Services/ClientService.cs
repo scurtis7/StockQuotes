@@ -3,6 +3,7 @@ using System.Net;
 using System.Net.Http;
 using System.Net.Http.Formatting;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace Services
 {
@@ -21,6 +22,7 @@ namespace Services
 
         public async Task<Stock> GetQuote(string symbol)
         {
+
             var uri = new Uri($"{FinnHubBaseUrl}/quote?symbol={symbol}&token={FinnHubToken}");
             var client = _clientFactory.CreateClient();
             var msg = new HttpRequestMessage
