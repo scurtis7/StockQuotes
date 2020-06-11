@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Stock} from '../stock';
 import {StockService} from '../stock.service';
 
@@ -9,7 +9,7 @@ import {StockService} from '../stock.service';
 })
 export class SearchComponent implements OnInit {
 
-  stock: Stock = null;
+  @Input() stock: Stock;
 
   constructor(private stockService: StockService) { }
 
@@ -21,9 +21,7 @@ export class SearchComponent implements OnInit {
   search(searchValue: string) {
     console.log('Stock quote search for: ' + searchValue);
     this.stockService.getStockQuote(searchValue)
-      .subscribe(result => {
-        console.log('stock.Close: ' + result.Close);
-        this.stock = result;
-      });
+      .subscribe(result => this.stock = result);
   }
+
 }

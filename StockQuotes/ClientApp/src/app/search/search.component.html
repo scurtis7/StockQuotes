@@ -8,33 +8,10 @@
     Search
   </button>
 </div>
-<div>
-  <table class="table-responsive-sm table-dark">
-    <tbody>
-    <tr>
-      <td class="result-label">Close:</td>
-      <td class="result">{{stock.close}}</td>
-    </tr>
-    <tr>
-      <td class="result-label">High:</td>
-      <td class="result">{{stock.high}}</td>
-    </tr>
-    <tr>
-      <td class="result-label">Low:</td>
-      <td class="result">{{stock.low}}</td>
-    </tr>
-    <tr>
-      <td class="result-label">Open:</td>
-      <td class="result">{{stock.open}}</td>
-    </tr>
-    <tr>
-      <td class="result-label">Price:</td>
-      <td class="result">{{stock.price}}</td>
-    </tr>
-    <tr>
-      <td class="result-label">Time:</td>
-      <td class="result">{{stock.time}}</td>
-    </tr>
-    </tbody>
-  </table>
+<div *ngIf="stock">
+  <div><span>Open: </span>{{stock.open}}</div>
+  <div><span>Close: </span>{{stock.close}}</div>
+  <div><span>High: </span>{{stock.high}}</div>
+  <div><span>Low: </span>{{stock.low}}</div>
+  <div><span>Price: </span>{{stock.price}}</div>
 </div>
