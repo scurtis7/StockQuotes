@@ -30,7 +30,6 @@ namespace StockQuotes
 
             services.AddSingleton<StockQuoteController>();
             services.AddSingleton<ClientService>();
-            // services.AddSingleton<ILogger>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
