@@ -11,7 +11,7 @@ namespace Services
     {
 
         private const string FinnHubBaseUrl = "https://finnhub.io/api/v1";
-        private const string FinnHubToken = "bq4hh0nrh5rbnj6k5e8g";
+        private const string FinnHubToken = "";
 
         private readonly IHttpClientFactory _clientFactory;
 
