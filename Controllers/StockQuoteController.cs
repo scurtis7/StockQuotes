@@ -1,8 +1,6 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
 using Services;
 
 namespace Controllers
@@ -27,6 +25,5 @@ namespace Controllers
             var result = await _clientService.GetQuote(symbol);
             return result;
         }
-        
     }
 }
